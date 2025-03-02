@@ -101,14 +101,14 @@ export default function CartDropdown({ cart,user }) {
                           </td>
 
                           <td>
-                            $
+                            
                             {parseFloat(
                               item.price.$numberDecimal || item.price
-                            ).toFixed()}
+                            ).toFixed()} TL
                           </td>
                           <td>
                             {' '}
-                            $
+                            
                             {fetcher.state !== 'idle' ? (
                               <span className="loading loading-infinity loading-md"></span>
                             ) : (
@@ -116,7 +116,7 @@ export default function CartDropdown({ cart,user }) {
                                 item.price.$numberDecimal * item.qty ||
                                   item.price * item.qty
                               ).toFixed()
-                            )}
+                            )} TL
                           </td>
                           <td>
                             {item.size ? (
@@ -196,10 +196,10 @@ export default function CartDropdown({ cart,user }) {
               </table>
             </div>
             <span className="font-semibold text-xl">
-              Subtotal: $
+              Subtotal: 
               {!cart.error
                 ? parseFloat(cart.subtotal.$numberDecimal).toFixed(2)
-                : 0}{' '}
+                : 0}{' '}TL
             </span>
             <div className="card-actions">
               <Link

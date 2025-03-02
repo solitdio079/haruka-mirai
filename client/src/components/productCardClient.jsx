@@ -29,7 +29,7 @@ export default function ProductCardClient({ item }) {
             <span
               className={item.onSale ? 'line-through' : 'text-xl font-bold'}
             >
-              ${item.price.$numberDecimal}
+              {item.price.$numberDecimal} TL
             </span>
             {item.onSale ? (
               <span className="text-xl font-bold mx-2">
