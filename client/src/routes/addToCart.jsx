@@ -1,11 +1,12 @@
 import {redirect} from 'react-router-dom'
+import { serverUrl } from '../server'
 export async function action({ request }) {
     const formData = await request.formData()
   const bodyObj = Object.fromEntries(formData)
   const user_id =localStorage.getItem("user_id") 
   bodyObj.user_id= user_id !== "undefined" ? user_id: null
     try {
-        const response = await fetch('http://localhost:5500/cart/', {
+        const response = await fetch(serverUrl+'/cart/', {
           method: 'POST',
           credentials: 'include',
           headers: { 'Content-Type': 'application/json' },
