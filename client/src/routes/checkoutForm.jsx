@@ -27,7 +27,7 @@ export default function CheckoutForm({ dpmCheckerLink }) {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: `http://localhost:5173${location.pathname}/complete`,
+        return_url: `https://harukamirai.org${location.pathname}/complete`,
       },
     })
 
