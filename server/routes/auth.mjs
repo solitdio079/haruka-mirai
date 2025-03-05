@@ -20,7 +20,7 @@ router.post("/login/email", passport.authenticate('magiclink', { action: 'reques
 router.get(
   '/login/email/verify',
   passport.authenticate('magiclink', {
-    successReturnToOrRedirect: 'http://localhost:5173/',
+    successReturnToOrRedirect: 'https://harukamirai.org/',
     failureMessage: 'Token Invalid',
   })
 )

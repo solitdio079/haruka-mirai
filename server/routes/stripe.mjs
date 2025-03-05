@@ -5,6 +5,7 @@ import Stripe from 'stripe'
 import Cart from '../models/cart.mjs'
 import Addresses from '../models/addresses.mjs'
 import Order from '../models/orders.mjs'
+import {} from 'dotenv/config'
 
 const router = Router()
 
@@ -15,7 +16,7 @@ const checkIfConnected = (req, res, next) => {
 
 // Instantiate Stripe
 const stripe = new Stripe(
-  'sk_test_51JQRmnCrM5sxvtxSt7zHS5RPOKLEhpB6vGRP1euFkdfijCBRudxQAnim2kbcYdv5t4PWWG0g759vciX19zdh8Wct00c8yyAi2w'
+  process.env.STRIPE_KEY
 )
 
 // Calculate amount for items
@@ -36,7 +37,7 @@ const calculateOrderAmount = (items) => {
 
 
 // This is your Stripe CLI webhook secret for testing your endpoint locally.
-const endpointSecret = "whsec_b384298fb0f0a0fd76adfa889a6ef378b9bf45689ba3d4726438962549823d32";
+const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 
 router.post(
@@ -163,7 +164,7 @@ router.post('/create-payment-intent', checkIfConnected, async (req, res) => {
     res.send({
       clientSecret: paymentIntent.client_secret,
       // [DEV]: For demo purposes only, you should avoid exposing the PaymentIntent ID in the client-side code.
-      dpmCheckerLink: `https://dashboard.stripe.com/settings/payment_methods/review?transaction_id=${paymentIntent.id}`,
+     // dpmCheckerLink: `https://dashboard.stripe.com/settings/payment_methods/review?transaction_id=${paymentIntent.id}`,
     })
   } catch (error) {
     return res.send({ error: error.message })

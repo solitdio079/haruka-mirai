@@ -31,7 +31,7 @@ passport.use(
       verifyUserAfterToken: true,
     },
     function send(user, token) {
-       var link = 'http://localhost:5500/auth/login/email/verify?token=' + token
+       var link = 'https://api.harukamirai.org/auth/login/email/verify?token=' + token
        sendSmtpEmail.subject = 'Login to Haruka Mirai!'
        sendSmtpEmail.htmlContent =
          '<h3>Hello!</h3><p>Click the link below to finish signing in to Haruka Mirai.</p><p><a href="' +

@@ -7,7 +7,7 @@ import AnimatedLayout from '../animation/animatedLayout'
 
 
 const stripePromise = loadStripe(
-  'pk_test_51JQRmnCrM5sxvtxSl9OOwQbmMQigtwocNYgG6gGmFEwF6e34pGe5TJ3iA01Cz9EjyD7t1gFdrzSKCtHCf9ETSigq00Ux3sGWkn'
+  'pk_live_51JQRmnCrM5sxvtxSViPuA5lEmVw1Jdj9vTST6tpAxn5po1PIxrt3Dk126ExQMNDIkSIHBwViBFwqOXKWTdzMqZQD00y6bqHRc4'
 )
 
 export async function loader() {
