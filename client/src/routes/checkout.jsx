@@ -107,18 +107,18 @@ export default function Checkout() {
 
                           <td>
                             {' '}
-                            $
+                            
                             {parseFloat(
                               item.price.$numberDecimal || item.price
-                            ).toFixed()}
+                            ).toFixed()} TL
                           </td>
                           <td>
                             {' '}
-                            $
+                            
                             {parseFloat(
                               item.price.$numberDecimal * item.qty ||
                                 item.price * item.qty
-                            ).toFixed()}
+                            ).toFixed()} TL
                           </td>
                           <td> {item.size ? item.size : 'None'} </td>
                         </tr>
@@ -127,10 +127,10 @@ export default function Checkout() {
                 </tbody>
               </table>
               <span className="font-semibold text-xl">
-                Subtotal: $
+                Subtotal: 
                 {cart.items
                   ? parseFloat(cart.subtotal.$numberDecimal).toFixed(2)
-                  : 0}{' '}
+                  : 0}{' '} TL
               </span>
             </div>
             <div className="card p-5 m-5 bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
